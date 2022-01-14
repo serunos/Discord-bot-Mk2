@@ -16,7 +16,7 @@ async def check_money(joueur,mise, ctx):
   else :
     await ctx.send("Vous n'avez jamais jouer, voici 1K pour bien démarrer")
     await ctx.send("Pour jouer veuillez recommencer")
-    db[joueur]="1000"
+    db[joueur]="1000" 
     return
 
   if mise<=0 :
