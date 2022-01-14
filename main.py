@@ -1,21 +1,34 @@
 import os
 from keep_alive import keep_alive
 from discord.ext import commands
+from replit import db
+
+keep_alive()  
+token = os.environ.get("token") 
 
 bot = commands.Bot(
-	command_prefix="!",  # Change to desired prefix
-	case_insensitive=True  # Commands aren't case-sensitive
+	command_prefix="!",  
+	case_insensitive=True 
 )
 
-@bot.event 
-async def on_ready():  # When the bot is ready
-    print("I'm in")
-    print(bot.user)  # Prints the bot's username and identifier
+async def check_argent(joueur):
+  return
 
-@bot.command()
-async def test(ctx, arg):
+@bot.event 
+async def on_ready():  
+    print(bot.user)  
+
+
+@bot.command
+async def peroquet(ctx, arg):
   await ctx.send(arg)
 
-keep_alive()  # Starts a webserver to be pinged.
-token = os.environ.get("token") 
-bot.run(token)  # Starts the bot
+@bot.command
+async def test(ctx, arg, message):
+  print(arg, message)
+
+@bot.command
+async def roulette(ctx, arg,message):
+  return
+
+bot.run(token)  
